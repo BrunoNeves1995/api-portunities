@@ -10,5 +10,5 @@
 #Coverage
 *.out
 
-#Db folder
-Db/
+db folder
+db/

@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Full Project",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",          // ou "auto"
+            "program": "${workspaceFolder}", // roda o projeto inteiro
+            "args": [],               // argumentos de linha de comando, se precisar
+            "env": {                  // variáveis de ambiente
+                "GIN_MODE": "debug",
+                "PORT": "8000"
+            }
+        }
+    ]
+}
