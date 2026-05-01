@@ -3,6 +3,8 @@ package handler
 import (
 	"fmt"
 	"strings"
+
+	"github.com/BrunoNeves1995/api-portunities/schemas"
 )
 
 type CreateOpiningrequest struct {
@@ -34,6 +36,47 @@ func (r *CreateOpiningrequest) Validate() error {
 		return errParamsIsRequired("salary", "int64")
 	}
 	return nil
+}
+
+// UpdateOpening
+type UpdateOpiningrequest struct {
+	Role     string `json:"role"`
+	Company  string `json:"company"`
+	Location string `json:"location"`
+	Remote   *bool  `json:"remote"`
+	Link     string `json:"link"`
+	Salary   int64  `json:"salary"`
+}
+
+func (r *UpdateOpiningrequest) Validate() error {
+	//If any field is provided, validation is truthy
+	if r.Role != "" || r.Company != "" || r.Location != "" || r.Link != "" || r.Remote != nil || r.Salary > 0 {
+		return nil
+	}
+	//If none of the fields were provided, return falsy
+	return fmt.Errorf("at least one valid field must be provided")
+
+}
+
+func applyOpeningUpdate(opening *schemas.Opening, request UpdateOpiningrequest) {
+	if request.Role != "" {
+		opening.Role = request.Role
+	}
+	if request.Company != "" {
+		opening.Company = request.Company
+	}
+	if request.Location != "" {
+		opening.Location = request.Location
+	}
+	if request.Remote != nil {
+		opening.Remote = *request.Remote
+	}
+	if request.Link != "" {
+		opening.Link = request.Link
+	}
+	if request.Salary > 0 {
+		opening.Salary = request.Salary
+	}
 }
 
 func errParamsIsRequired(name, typ string) error {
