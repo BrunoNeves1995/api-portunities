@@ -32,6 +32,19 @@ type SuccessCreateOpeningResponse struct {
 	Data    interface{} `json:"data"`
 }
 
+type SuccessListOpeningsResponse struct {
+	Message string `json:"message"`
+	Data    []struct {
+		ID       uint   `json:"id"`
+		Role     string `json:"role"`
+		Company  string `json:"company"`
+		Location string `json:"location"`
+		Remote   bool   `json:"remote"`
+		Link     string `json:"link"`
+		Salary   int64  `json:"salary"`
+	} `json:"data"`
+}
+
 func sendSuccess(ctx *gin.Context, operation string, data interface{}) {
 	ctx.Header("Content-Type", "application/json")
 	success := SuccessCreateOpeningResponse{

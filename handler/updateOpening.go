@@ -11,8 +11,22 @@ import (
 	"gorm.io/gorm"
 )
 
-func UpdateOpiningHandler(ctx *gin.Context) {
-	request := UpdateOpiningrequest{}
+// @BasePath /api/v1
+
+// @Summary Update opening
+// @Description Update job opening by ID
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query string true "Opening ID"
+// @Param request body UpdateOpeningRequest true "Request body"
+// @Success 200 {object} SuccessCreateOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [put]
+func UpdateOpeningHandler(ctx *gin.Context) {
+	request := UpdateOpeningRequest{}
 
 	//Validation JSON Request
 	if err := ctx.ShouldBindJSON(&request); err != nil {

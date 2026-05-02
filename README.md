@@ -57,11 +57,11 @@ Define os modelos de dados da aplicação:
 
 ### 📁 `handler/`
 Controllers HTTP que processam as requisições:
-- **createOpening.go**: POST `/api/v1/opining` - Criar nova vaga
-- **getOpening.go**: GET `/api/v1/opining?id=X` - Obter vaga específica
-- **listOpening.go**: GET `/api/v1/opinings` - Listar todas as vagas
-- **updateOpening.go**: PUT `/api/v1/opining?id=X` - Atualizar vaga
-- **deleteOpening.go**: DELETE `/api/v1/opining?id=X` - Deletar vaga
+- **createOpening.go**: POST `/api/v1/opening` - Criar nova vaga
+- **getOpening.go**: GET `/api/v1/opening?id=X` - Obter vaga específica
+- **listOpening.go**: GET `/api/v1/openings` - Listar todas as vagas
+- **updateOpening.go**: PUT `/api/v1/opening?id=X` - Atualizar vaga
+- **deleteOpening.go**: DELETE `/api/v1/opening?id=X` - Deletar vaga
 - **request.go**: Structs de validação de entrada
 - **response.go**: Structs de resposta padronizadas
 
@@ -80,11 +80,11 @@ Gerada automaticamente pelo Swagger (swag):
 
 | Método | Endpoint | Descrição |
 |--------|----------|-----------|
-| POST | `/api/v1/opining` | Criar nova vaga |
-| GET | `/api/v1/opining?id=X` | Obter vaga por ID |
-| GET | `/api/v1/opinings` | Listar todas as vagas |
-| PUT | `/api/v1/opining?id=X` | Atualizar vaga |
-| DELETE | `/api/v1/opining?id=X` | Deletar vaga |
+| POST | `/api/v1/opening` | Criar nova vaga |
+| GET | `/api/v1/opening?id=X` | Obter vaga por ID |
+| GET | `/api/v1/openings` | Listar todas as vagas |
+| PUT | `/api/v1/opening?id=X` | Atualizar vaga |
+| DELETE | `/api/v1/opening?id=X` | Deletar vaga |
 | GET | `/swagger/*any` | UI Swagger (documentação interativa) |
 
 ## Executar a Aplicação
@@ -127,7 +127,7 @@ make clean
 
 ```bash
 # Criar vaga
-curl -X POST http://localhost:8000/api/v1/opining \
+curl -X POST http://localhost:8000/api/v1/opening \
   -H "Content-Type: application/json" \
   -d '{
     "role": "Senior Developer",

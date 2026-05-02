@@ -14,13 +14,13 @@ import (
 // @Tags Openings
 // @Accept json
 // @Produce json
-// @Param request body CreateOpiningrequest true "Request body"
+// @Param request body CreateOpeningRequest true "Request body"
 // @Success 200 {object} SuccessCreateOpeningResponse
 // @Failure 400 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
-// @Router /opining [post]
-func CreateOpiningHandler(ctx *gin.Context) {
-	request := CreateOpiningrequest{}
+// @Router /opening [post]
+func CreateOpeningHandler(ctx *gin.Context) {
+	request := CreateOpeningRequest{}
 
 	//Validation JSON Request
 	if err := ctx.ShouldBindJSON(&request); err != nil {

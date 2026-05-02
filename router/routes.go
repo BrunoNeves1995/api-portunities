@@ -18,12 +18,12 @@ func initializeRoutes(router *gin.Engine) {
 	// Initialize router
 	v1 := router.Group(basePath)
 	{
-		//opining: vaga
-		v1.GET("/opining", handler.GetOpiningHandler)
-		v1.POST("/opining", handler.CreateOpiningHandler)
-		v1.DELETE("/opining", handler.DeleteOpiningHandler)
-		v1.PUT("/opining", handler.UpdateOpiningHandler)
-		v1.GET("/opinings", handler.ListOpiningsHandler)
+		// opening: vaga
+		v1.GET("/opening", handler.GetOpeningHandler)
+		v1.POST("/opening", handler.CreateOpeningHandler)
+		v1.DELETE("/opening", handler.DeleteOpeningHandler)
+		v1.PUT("/opening", handler.UpdateOpeningHandler)
+		v1.GET("/openings", handler.ListOpeningsHandler)
 	}
 
 	//Initialize Swagger

@@ -9,7 +9,20 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func DeleteOpiningHandler(ctx *gin.Context) {
+// @BasePath /api/v1
+
+// @Summary Delete opening
+// @Description Delete job opening by ID
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query string true "Opening ID"
+// @Success 200 {object} SuccessCreateOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [delete]
+func DeleteOpeningHandler(ctx *gin.Context) {
 	// Received id as query Params
 	id := ctx.Query("id")
 

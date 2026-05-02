@@ -7,7 +7,7 @@ import (
 	"github.com/BrunoNeves1995/api-portunities/schemas"
 )
 
-type CreateOpiningrequest struct {
+type CreateOpeningRequest struct {
 	Role     string `json:"role"`
 	Company  string `json:"company"`
 	Location string `json:"location"`
@@ -16,7 +16,7 @@ type CreateOpiningrequest struct {
 	Salary   int64  `json:"salary"`
 }
 
-func (r *CreateOpiningrequest) Validate() error {
+func (r *CreateOpeningRequest) Validate() error {
 	if r.Role == "" || strings.TrimSpace(r.Role) == "" {
 		return errParamsIsRequired("role", "string")
 	}
@@ -39,7 +39,7 @@ func (r *CreateOpiningrequest) Validate() error {
 }
 
 // UpdateOpening
-type UpdateOpiningrequest struct {
+type UpdateOpeningRequest struct {
 	Role     string `json:"role"`
 	Company  string `json:"company"`
 	Location string `json:"location"`
@@ -48,7 +48,7 @@ type UpdateOpiningrequest struct {
 	Salary   int64  `json:"salary"`
 }
 
-func (r *UpdateOpiningrequest) Validate() error {
+func (r *UpdateOpeningRequest) Validate() error {
 	//If any field is provided, validation is truthy
 	if r.Role != "" || r.Company != "" || r.Location != "" || r.Link != "" || r.Remote != nil || r.Salary > 0 {
 		return nil
@@ -58,7 +58,7 @@ func (r *UpdateOpiningrequest) Validate() error {
 
 }
 
-func applyOpeningUpdate(opening *schemas.Opening, request UpdateOpiningrequest) {
+func applyOpeningUpdate(opening *schemas.Opening, request UpdateOpeningRequest) {
 	if request.Role != "" {
 		opening.Role = request.Role
 	}

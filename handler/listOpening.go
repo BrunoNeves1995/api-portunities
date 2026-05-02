@@ -7,7 +7,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func ListOpiningsHandler(ctx *gin.Context) {
+// @BasePath /api/v1
+
+// @Summary List all openings
+// @Description List all job openings
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Success 200 {object} SuccessListOpeningsResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /openings [get]
+func ListOpeningsHandler(ctx *gin.Context) {
 	openings := []schemas.Opening{}
 
 	//Find all openings

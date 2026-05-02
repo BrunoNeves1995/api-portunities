@@ -11,7 +11,20 @@ import (
 	"gorm.io/gorm"
 )
 
-func GetOpiningHandler(ctx *gin.Context) {
+// @BasePath /api/v1
+
+// @Summary Get opening
+// @Description Get job opening by ID
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query string true "Opening ID"
+// @Success 200 {object} SuccessCreateOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [get]
+func GetOpeningHandler(ctx *gin.Context) {
 	id := ctx.Query("id")
 
 	if strings.TrimSpace(id) == "" {
