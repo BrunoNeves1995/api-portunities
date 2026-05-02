@@ -7,6 +7,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @BasePath /api/v1
+
+// @Summary Create opening
+// @Description Create new job opening
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param request body CreateOpiningrequest true "Request body"
+// @Success 200 {object} SuccessCreateOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [post]
 func CreateOpiningHandler(ctx *gin.Context) {
 	request := CreateOpiningrequest{}
 
