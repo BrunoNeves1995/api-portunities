@@ -18,7 +18,7 @@ import (
 // @Success 200 {object} SuccessCreateOpeningResponse
 // @Failure 400 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
-// @Router /opening [post]
+// @Router /opining [post]
 func CreateOpiningHandler(ctx *gin.Context) {
 	request := CreateOpiningrequest{}
 
